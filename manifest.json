@@ -1,0 +1,45 @@
+{
+  "display_information": {
+      "name": "ddw-slackbot",
+      "description": "Getting started quickly using data.world's AI Context Engine™ to chat with our internal data.world metrics data",
+      "background_color": "#0c7786"
+  },
+  "features": {
+      "bot_user": {
+          "display_name": "ddw-slackbot",
+          "always_online": true
+      }
+  },
+  "oauth_config": {
+      "scopes": {
+          "bot": [
+              "app_mentions:read",
+              "channels:history",
+              "channels:join",
+              "chat:write.customize",
+              "chat:write",
+              "im:history",
+              "im:read",
+              "im:write"
+          ],
+          "user": [
+              "identity.basic"
+          ]
+      }
+  },
+  "settings": {
+      "event_subscriptions": {
+          "request_url": "https://YOUR_URL/slack/events",
+          "bot_events": [
+              "app_mention",
+              "message.im"
+          ]
+      },
+      "interactivity": {
+          "is_enabled": true
+      },
+      "org_deploy_enabled": false,
+      "socket_mode_enabled": false,
+      "token_rotation_enabled": false
+  }
+}

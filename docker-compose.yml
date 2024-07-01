@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  app:
+    image: node:20-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+    command: ["node", "dist/app.js"]
+    user: "node"
